@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 1</h1>
+
+    <div id="resultado"></div>
+
+    <script>
+      let livro = {
+        titulo: "Java Script",
+        autor: "Maujor",
+        paginas: 432,
+        preco: 69,
+        freteSedex: function (ceporigem, cepdestino, peso) {
+          let valorFrete = "";
+          valorFrete = ceporigem * cepdestino * peso;
+          return valorFrete;
+        },
+
+        capitulos: {
+          capitulo1: "Revisao Java Script",
+          capitulo2: "Funções",
+          capitulo3: "Eventos",
+          capitulo4: "Requisições",
+        },
+      };
+
+      
+      for (let prop in livro) {
+        if (prop != "freteSedex" && prop != "capitulos") {
+            document.getElementById('resultado').innerHTML += (prop + ": " + livro[prop]);
+        }
+
+        if (prop == "capitulos") {
+          for (let propCap in livro.capitulos) {
+            document.getElementById('resultado').innerHTML += (propCap + ": " + livro[prop][propCap]);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
