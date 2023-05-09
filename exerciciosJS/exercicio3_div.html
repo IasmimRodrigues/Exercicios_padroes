@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 3</h1>
+
+    <h3>
+        Valor: <input type="text" id="valor">
+        <input type="button" value="Calcular" onclick="calcular()">
+    </h3>
+    
+    <div id="resultado"></div>
+
+    <script>
+
+        function calcular() {
+            let valor = Number(document.getElementById('valor').value);
+            
+            let desconto = valor - (valor * 0.1);
+            let parcela = valor / 3;
+
+            document.getElementById('resultado').innerHTML = '<h2> O valor à vista é de ' + desconto + ' reais <br> O valor em 3x é de ' + parcela + ' reais a parcela. </h2>';
+        }
+
+    </script>
+</body>
+</html>

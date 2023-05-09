@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 2</h1>
+
+    <h3>
+        Valor: <input type="text" id="valor">
+    </h3>
+
+    <h3>
+        Pessoas: <input type="text" id="pessoas">
+    </h3>
+
+    <input type="button" value="Calcular" onclick="calcular()">
+    
+    <div id="resultado"></div>
+
+    <script>
+
+        function calcular() {
+            let valor = Number(document.getElementById('valor').value);
+            let pessoas = Number(document.getElementById('pessoas').value);
+            
+            let resultado = valor / pessoas;
+
+            document.getElementById('resultado').innerHTML = '<h2> Cada pessoa deve pagar ' + resultado + ' reais! </h2>';
+        }
+        
+    </script>
+</body>
+</html>
