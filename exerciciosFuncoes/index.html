@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inicial">Distância inicial:</label>
+    <input type="text" placeholder="Digite a distância inicial:" id="distIni" />
+
+    <label for="final">Distância final:</label>
+    <input type="text" placeholder="Digite a distância final:" id="distFin" />
+
+    <label for="passo">Distância do passo:</label>
+    <input type="text" placeholder="Digite a distância do passo:" id="passo" />
+
+
+    <button onclick="atravessaRua()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        function atravessaRua() {
+            let distInicial = Number(document.getElementById('distIni').value);
+            let distFinal = Number(document.getElementById('distFin').value);
+            let passo = Number(document.getElementById('passo').value);
+
+            let i = 0, totalPassos;
+
+            for(totalPassos = passo; totalPassos <= distFinal - distInicial; ) {
+                totalPassos += passo;
+                i++;
+            }
+
+            document.getElementById('resultado').innerHTML = 'Quantidade mínima de passos: ' + i;
+        }
+
+    </script>
+</body>
+</html>
