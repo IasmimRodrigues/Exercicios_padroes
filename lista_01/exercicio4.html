@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 4</h1>
+
+    <h3>
+        Medicamento: <input type="text" id="remedio">
+    </h3>
+
+    <h3>
+        Preço: <input type="text" id="valor">
+    </h3>
+
+    <input type="button" value="Mostrar promoção" onclick="calcular()">
+    
+    <div id="resultado"></div>
+
+    <script>
+        
+        function calcular() {
+            let remedio = document.getElementById('remedio').value;
+            let valor = Number(document.getElementById('valor').value);
+
+            let promocao = Math.floor(valor * 2);
+
+            document.getElementById('resultado').innerHTML = '<h2> Promoção de ' + remedio + '<br> Leve 2 por apenas R$ ' + promocao + ' </h2>';
+        }
+    </script>
+</body>
+</html>

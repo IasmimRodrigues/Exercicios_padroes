@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercício 3</h1>
+
+    <h3>
+        Peso (em gramas): <input type="text" id="peso">
+    </h3>
+
+    <input type="button" value="Calcular valor" onclick="calcular()">
+    
+    <div id="resultado"></div>
+
+    <script>
+        
+        function calcular() {
+            let peso = Number(document.getElementById('peso').value);
+
+            if (peso <= 500) {
+                let valor = peso * (40/1000);
+                document.getElementById('resultado').innerHTML = '<h2> Valor a pagar: R$ ' + valor + ' </h2>';
+            } else if (peso <= 1000) {
+                let valor = peso * (35/1000);
+                document.getElementById('resultado').innerHTML = '<h2> Valor a pagar: R$ ' + valor + ' </h2>';
+            } else {
+                let valor = peso * (30/1000);
+                document.getElementById('resultado').innerHTML = '<h2> Valor a pagar: R$ ' + valor + ' </h2>';
+            }
+
+            
+        }
+    </script>
+</body>
+</html>
