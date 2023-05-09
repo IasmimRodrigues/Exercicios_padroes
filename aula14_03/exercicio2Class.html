@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h1>Exercício 2</h1>
+
+    <div id="resultado"></div>
+
+    <script>
+      class Cilindro {
+        constructor(r, h) {
+            this.raioBase = r;
+            this.altura = h;
+        }
+        
+        calcularAreaBase() {
+            return (this.raioBase * this.raioBase) * 3.14;
+        }
+        calcularVolume() {
+            return this.calcularAreaBase() * this.altura;
+        }
+        calcularAreaLateral() {
+            return 2 * 3.14 * this.raioBase * this.altura;
+        }
+      };
+
+      let cilindroUm = new Cilindro(2, 5);
+      let cilindroDois = new Cilindro(20, 10);
+
+      cilindroUm.calcularAreaBase();
+      cilindroUm.calcularAreaLateral();
+      cilindroUm.calcularVolume();
+
+      cilindroDois.calcularAreaBase();
+      cilindroDois.calcularAreaLateral();
+      cilindroDois.calcularVolume();
+
+      console.log('Cilindro 1: \n Área da base: ' + cilindroUm.calcularAreaBase() + '\n Área Lateral: ' + cilindroUm.calcularAreaLateral() + '\n Volume: ' + cilindroUm.calcularVolume() + '\n Cilindro 2: \n Área da base: ' + cilindroDois.calcularAreaBase() + '\n Área Lateral: ' + cilindroDois.calcularAreaLateral() + '\n Volume: ' + cilindroDois.calcularVolume());
+    </script>
+  </body>
+</html>
