@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 3</h1>
+
+    <h3>Número de linhas: <input type="text" id="linhas" /></h3>
+
+    <input type="button" value="Criar árvore" onclick="criarArvore()" />
+
+    <div id="arvore"></div>
+
+    <script>
+      function criarArvore() {
+        let i, coluna;
+        let linhas = Number(document.getElementById("linhas").value);
+
+        for (i = 1; i <= linhas; i++) {
+          for (coluna = linhas - i; coluna >= 1; coluna--) {
+            document.getElementById("arvore").innerHTML += " &nbsp ";
+          }
+
+          for (coluna = 1; coluna <= i; coluna++) {
+            document.getElementById("arvore").innerHTML += " * ";
+            document.getElementById("arvore").innerHTML += " &nbsp ";
+          }
+
+          document.getElementById("arvore").innerHTML += " <br> ";
+        }
+
+        if ( coluna > linhas) {
+            for (coluna = linhas; coluna >= 1; coluna--) {
+                document.getElementById('arvore').innerHTML += " &nbsp ";
+            }
+
+            document.getElementById('arvore').innerHTML += ' * ';
+            document.getElementById('arvore').innerHTML += ' <br> ';
+
+            for (coluna = linhas; coluna >= 1; coluna--) {
+                document.getElementById('arvore').innerHTML += " &nbsp ";
+            }
+
+            document.getElementById('arvore').innerHTML += ' * ';
+            document.getElementById('arvore').innerHTML += ' <br> ';
+        }
+      }
+    </script>
+  </body>
+</html>

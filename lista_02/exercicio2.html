@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Exercício 2</h1>
+
+    <h3>Descrição da conta: <input type="text" id="descricao" /></h3>
+
+    <h3>Valor a pagar R$: <input type="text" id="valor" /></h3>
+
+    <input type="button" value="Registrar a conta" onclick="calcular()" />
+
+    <div id="resultado"></div>
+
+    <div id="total"></div>
+
+    <script>
+      let valor_total = Number(0);
+
+      let i = 0;
+
+      function calcular() {
+        let descricao = document.getElementById("descricao").value;
+        let valor = Number(document.getElementById("valor").value);
+
+        valor_total += Number(valor);
+
+        document.getElementById("resultado").innerHTML +=
+          "<h2>" + descricao + " - R$ " + valor + " </h2>";
+
+        i++;
+
+        document.getElementById("total").innerHTML =
+          "<h2> ------------ <br>" +
+          i +
+          " contas - Total R$: " +
+          valor_total +
+          " </h2>";
+      }
+    </script>
+  </body>
+</html>
